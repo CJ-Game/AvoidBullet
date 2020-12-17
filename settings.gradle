@@ -1,4 +1,5 @@
 include ':joystickView'
+include ':joystickView'
 include ':app'
 project(':joystickView').projectDir = new File(rootDir, 'JoystickView-master/JoystickView-master/joystickView/')
 rootProject.name = "AvoidBullet"
