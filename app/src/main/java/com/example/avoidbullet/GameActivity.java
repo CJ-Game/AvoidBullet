@@ -21,8 +21,6 @@ import com.zerokol.views.joystickView.JoystickView;
 public class GameActivity extends AppCompatActivity {
     private JoystickView joystick;
     private ImageView mImageView;
-    private float oldXvalue;
-    private float oldYvalue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,48 +28,48 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
 
         joystick = (JoystickView) findViewById(R.id.joystickView);
-
+        //조이스틱 움직이기
         joystick.setOnJoystickMoveListener(new JoystickView.OnJoystickMoveListener() {
 
             @Override
             public void onValueChanged(int angle, int power, int direction) {
                 // TODO Auto-generated method stub
-                switch(direction)
+                switch (direction) //조이스틱이 움직이는 방향에 따라 imageview 움직이기
                 {
                     case JoystickView.FRONT:
-                        findViewById(R.id.character).setY(findViewById(R.id.character).getY() - power/5);
+                        findViewById(R.id.character).setY(findViewById(R.id.character).getY() - power / 5);
                         break;
                     case JoystickView.FRONT_RIGHT:
-                        findViewById(R.id.character).setX(findViewById(R.id.character).getX()- power/5);
-                        findViewById(R.id.character).setY(findViewById(R.id.character).getY()- power/5);
+                        findViewById(R.id.character).setX(findViewById(R.id.character).getX() - power / 5);
+                        findViewById(R.id.character).setY(findViewById(R.id.character).getY() - power / 5);
                         break;
                     case JoystickView.RIGHT:
-                        findViewById(R.id.character).setX(findViewById(R.id.character).getX()-power/5);
+                        findViewById(R.id.character).setX(findViewById(R.id.character).getX() - power / 5);
                         break;
                     case JoystickView.RIGHT_BOTTOM:
-                        findViewById(R.id.character).setX(findViewById(R.id.character).getX()-power/5);
-                        findViewById(R.id.character).setY(findViewById(R.id.character).getY()+ power/5);
+                        findViewById(R.id.character).setX(findViewById(R.id.character).getX() - power / 5);
+                        findViewById(R.id.character).setY(findViewById(R.id.character).getY() + power / 5);
                         break;
                     case JoystickView.BOTTOM:
-                        findViewById(R.id.character).setY(findViewById(R.id.character).getY()+ power/5);
+                        findViewById(R.id.character).setY(findViewById(R.id.character).getY() + power / 5);
                         break;
                     case JoystickView.BOTTOM_LEFT:
-                        findViewById(R.id.character).setX(findViewById(R.id.character).getX()+ power/5);
-                        findViewById(R.id.character).setY(findViewById(R.id.character).getY()+ power/5);
+                        findViewById(R.id.character).setX(findViewById(R.id.character).getX() + power / 5);
+                        findViewById(R.id.character).setY(findViewById(R.id.character).getY() + power / 5);
                         break;
                     case JoystickView.LEFT:
-                        findViewById(R.id.character).setX(findViewById(R.id.character).getX()+ power/5);
+                        findViewById(R.id.character).setX(findViewById(R.id.character).getX() + power / 5);
                         break;
                     case JoystickView.LEFT_FRONT:
-                        findViewById(R.id.character).setX(findViewById(R.id.character).getX()+ power/5);
-                        findViewById(R.id.character).setY(findViewById(R.id.character).getY()-power/5);
+                        findViewById(R.id.character).setX(findViewById(R.id.character).getX() + power / 5);
+                        findViewById(R.id.character).setY(findViewById(R.id.character).getY() - power / 5);
                         break;
                     default:
                         break;
                 }
 
             }
-        }, 15);
+        }, 15);  //loopInterval
     }
 }
 
