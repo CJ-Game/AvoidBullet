@@ -6,17 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".GameActivity">
 
-    <!--글자 투명도 30%-->
-    <TextView
+    <!-- 타이머 -->
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/timer"
-        android:text="00:00"
-        android:textSize="30sp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15sp"
-        android:textColor="#4D000000"
-        />
+        android:orientation="horizontal"
+        android:textColor="#80000000">
+        <!--글자 투명도 50%-->
+        <TextView
+            android:id="@+id/alive_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/alive_millietime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=".00"
+            android:textSize="20sp"
+            android:visibility="invisible" />
+    </LinearLayout>
 
     <ImageView
         android:layout_width="wrap_content"
