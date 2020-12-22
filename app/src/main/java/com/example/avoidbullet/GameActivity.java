@@ -43,37 +43,69 @@ public class GameActivity extends AppCompatActivity {
                     case JoystickView.FRONT:  // 위
                         findViewById(R.id.character).setY(findViewById(R.id.character).getY() - power / 5);
                         break;
+                    case JoystickView.FRONT_FRONT_RIGHT:
+                        findViewById(R.id.character).setX(findViewById(R.id.character).getX() - power / 10);
+                        findViewById(R.id.character).setY(findViewById(R.id.character).getY() - power / 4);
+                        break;
                     case JoystickView.FRONT_RIGHT:
                         findViewById(R.id.character).setX(findViewById(R.id.character).getX() - power / 5);
                         findViewById(R.id.character).setY(findViewById(R.id.character).getY() - power / 5);
                         break;
+                    case JoystickView.FRONT_RIGHT_RIGHT:
+                        findViewById(R.id.character).setX(findViewById(R.id.character).getX() - power / 4);
+                        findViewById(R.id.character).setY(findViewById(R.id.character).getY() - power / 10);
+                        break;
                     case JoystickView.RIGHT:  // 오른쪽
                         findViewById(R.id.character).setX(findViewById(R.id.character).getX() - power / 5);
+                        break;
+                    case JoystickView.RIGHT_RIGHT_BOTTOM:
+                        findViewById(R.id.character).setX(findViewById(R.id.character).getX() - power / 4);
+                        findViewById(R.id.character).setY(findViewById(R.id.character).getY() + power / 10);
                         break;
                     case JoystickView.RIGHT_BOTTOM:
                         findViewById(R.id.character).setX(findViewById(R.id.character).getX() - power / 5);
                         findViewById(R.id.character).setY(findViewById(R.id.character).getY() + power / 5);
                         break;
+                    case JoystickView.BOTTOM_BOTTOM_RIGHT:
+                        findViewById(R.id.character).setX(findViewById(R.id.character).getX() - power / 10);
+                        findViewById(R.id.character).setY(findViewById(R.id.character).getY() + power / 4);
+                        break;
                     case JoystickView.BOTTOM:  // 아래
                         findViewById(R.id.character).setY(findViewById(R.id.character).getY() + power / 5);
+                        break;
+                    case JoystickView.BOTTOM_BOTTOM_LEFT:
+                        findViewById(R.id.character).setX(findViewById(R.id.character).getX() + power / 10);
+                        findViewById(R.id.character).setY(findViewById(R.id.character).getY() + power / 4);
                         break;
                     case JoystickView.BOTTOM_LEFT:
                         findViewById(R.id.character).setX(findViewById(R.id.character).getX() + power / 5);
                         findViewById(R.id.character).setY(findViewById(R.id.character).getY() + power / 5);
                         break;
+                    case JoystickView.BOTTOM_LEFT_LEFT:
+                        findViewById(R.id.character).setX(findViewById(R.id.character).getX() + power / 4);
+                        findViewById(R.id.character).setY(findViewById(R.id.character).getY() + power / 10);
+                        break;
                     case JoystickView.LEFT:  // 왼쪽
                         findViewById(R.id.character).setX(findViewById(R.id.character).getX() + power / 5);
+                        break;
+                    case JoystickView.LEFT_LEFT_FRONT:
+                        findViewById(R.id.character).setX(findViewById(R.id.character).getX() + power / 4);
+                        findViewById(R.id.character).setY(findViewById(R.id.character).getY() - power / 10);
                         break;
                     case JoystickView.LEFT_FRONT:
                         findViewById(R.id.character).setX(findViewById(R.id.character).getX() + power / 5);
                         findViewById(R.id.character).setY(findViewById(R.id.character).getY() - power / 5);
+                        break;
+                    case JoystickView.LEFT_FRONT_FRONT:
+                        findViewById(R.id.character).setX(findViewById(R.id.character).getX() + power / 10);
+                        findViewById(R.id.character).setY(findViewById(R.id.character).getY() - power / 4);
                         break;
                     default:
                         break;
                 }
 
             }
-        }, 15);  //loopInterval
+        }, 20);  //loopInterval
 
 
 

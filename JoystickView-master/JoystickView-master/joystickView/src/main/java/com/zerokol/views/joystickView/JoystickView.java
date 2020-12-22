@@ -12,14 +12,22 @@ public class JoystickView extends View implements Runnable {
     // Constants
     private final double RAD = 57.2957795;
     public final static long DEFAULT_LOOP_INTERVAL = 100; // 100 ms
-    public final static int FRONT = 3;
-    public final static int FRONT_RIGHT = 4;
-    public final static int RIGHT = 5;
-    public final static int RIGHT_BOTTOM = 6;
-    public final static int BOTTOM = 7;
-    public final static int BOTTOM_LEFT = 8;
+    public final static int FRONT = 5;
+    public final static int FRONT_RIGHT = 7;
+    public final static int FRONT_FRONT_RIGHT = 6; 
+    public final static int FRONT_RIGHT_RIGHT = 8;
+    public final static int RIGHT = 9;
+    public final static int RIGHT_BOTTOM = 11;
+    public final static int RIGHT_RIGHT_BOTTOM = 10;
+    public final static int BOTTOM_BOTTOM_RIGHT = 12;
+    public final static int BOTTOM = 13;
+    public final static int BOTTOM_LEFT = 15;
+    public final static int BOTTOM_BOTTOM_LEFT = 14;
+    public final static int BOTTOM_LEFT_LEFT = 16;
     public final static int LEFT = 1;
-    public final static int LEFT_FRONT = 2;
+    public final static int LEFT_FRONT = 3;
+    public final static int LEFT_FRONT_FRONT = 4;
+    public final static int LEFT_LEFT_FRONT = 2;
     // Variables
     private OnJoystickMoveListener onJoystickMoveListener; // Listener
     private Thread thread = new Thread(this);
@@ -227,15 +235,15 @@ public class JoystickView extends View implements Runnable {
             a = (lastAngle * -1) + 90;
         } else if (lastAngle > 0) {
             if (lastAngle <= 90) {
-                a = 90 - lastAngle;
+                a = 90	 - lastAngle;
             } else {
                 a = 360 - (lastAngle - 90);
             }
         }
 
-        int direction = (int) (((a + 22) / 45) + 1);
+        int direction = (int) (((a + 11) / 22) + 1);
 
-        if (direction > 8) {
+        if (direction > 16) {
             direction = 1;
         }
         return direction;
