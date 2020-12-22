@@ -75,6 +75,8 @@ public class GameActivity extends AppCompatActivity {
             }
         }, 15);  //loopInterval
 
+
+
      //타이머
         alive_time = findViewById(R.id.alive_time);
         alive_millietime = findViewById(R.id.alive_millietime);  // 아래 첨자 밀리초
