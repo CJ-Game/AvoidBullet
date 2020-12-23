@@ -79,7 +79,7 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onValueChanged(int angle, int power, int direction) {
                 // TODO Auto-generated method stub
-                if (count == 0) {
+                if (count == 0) {  // 3초 타이머 끝난 후 조이스틱 조작 가능
                     switch (direction) //조이스틱이 움직이는 방향에 따라 imageview 움직이기
                     {
                         case JoystickView.FRONT:  // 위
@@ -159,11 +159,11 @@ public class GameActivity extends AppCompatActivity {
                         alive_time.setText(min_format + " : " + sec_format);
                         alive_millietime.setText("." + msec_format);
                     }
-                } else {
+                } else {  // 3초후 시작
                     count--;
                     TextView textView = findViewById(R.id.start_timer);
                     if (count == 0) {
-                        textView.setVisibility(View.GONE);
+                        textView.setVisibility(View.GONE);  // 숨기기
                     } else {
                         textView.setText(String.valueOf((count / 100)));
                     }
@@ -204,7 +204,7 @@ public class GameActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        timer.cancel();
+        timer.cancel();  // timer 리셋
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         this.finish();
