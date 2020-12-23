@@ -4,15 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".GameActivity"
     android:id="@+id/game_view">
 
-<ImageView
-    android:id="@+id/character"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:src="@mipmap/ic_launcher"
-    tools:ignore="MissingConstraints"/>
+    <TextView
+        android:id="@+id/start_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="0"
+        android:textSize="150dp"/>
+
+    <ImageView
+        android:id="@+id/character"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/character"
+        tools:ignore="MissingConstraints" />
 
     <com.zerokol.views.joystickView.JoystickView
         android:id="@+id/joystickView"
@@ -20,6 +29,7 @@
         android:layout_height="165dp"
         android:layout_gravity = "bottom|right"
         tools:ignore="MissingConstraints"
+        android:alpha="0.8"
         />
 
     <!-- 타이머 -->
