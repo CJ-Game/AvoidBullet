@@ -29,7 +29,7 @@
         android:layout_height="165dp"
         android:layout_gravity = "bottom|right"
         tools:ignore="MissingConstraints"
-        android:alpha="0.8"
+        android:alpha="0.3"
         />
 
     <!-- 타이머 -->
